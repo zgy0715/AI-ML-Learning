@@ -1,0 +1,16 @@
+# Python缓存
+__pycache__/
+*.pyc
+*.pyo
+
+# 环境
+.env
+venv/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+
+# NumPy数据文件（二进制）
+*.npy
