@@ -1,9 +1,9 @@
 # ========== 第6课：Pandas入门 ==========
-import pandas as pd
-import numpy as np
+import pandas as pd# 数据分析的核心库，提供了强大的数据结构和数据处理功能
+import numpy as np# 数值计算库，提供了高效的数组操作和数学函数
 
 # ========== 1. 创建DataFrame（类似Excel表格）==========
-print("===== 创建DataFrame =====")
+print("===== 创建DataFrame =====")# 从列表创建
 
 # 从字典创建
 data = {
@@ -13,9 +13,9 @@ data = {
     "城市": ["北京", "上海", "广州", "深圳", "北京"]
 }
 
-df = pd.DataFrame(data)
-print(df)
-print("\n" + "="*40)
+df = pd.DataFrame(data)# 显示DataFrame
+print(df)# DataFrame的基本属性
+print("\n" + "="*40)# 行数和列数
 
 
 # ========== 2. 查看数据 ==========
@@ -29,7 +29,7 @@ print("\n后2行:\n", df.tail(2))
 
 # 基本信息
 print("\n基本信息:")
-print(df.info())
+print(df.info())# 数据类型和非空值数量
 
 # 统计描述
 print("\n统计描述:")
@@ -48,11 +48,11 @@ print("\n姓名和成绩:")
 print(df[["姓名", "成绩"]])
 
 # 选择行（通过位置：iloc）
-print("\n第2行（iloc[1]）:", df.iloc[1].tolist())
+print("\n第2行（iloc[1]）:", df.iloc[1].tolist())# 注意：iloc是基于位置的索引，索引从0开始
 
 # 选择行（通过条件）
 print("\n成绩 >= 90 的学生:")
-print(df[df["成绩"] >= 90])
+print(df[df["成绩"] >= 90])# 注意：条件筛选返回的是一个新的DataFrame，包含满足条件的行
 
 # 多个条件
 print("\n成绩 >= 80 且 年龄 >= 20:")
