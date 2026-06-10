@@ -3,8 +3,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # 尝试设置中文字体
-plt.rcParams['font.sans-serif'] = ['SimHei', 'Microsoft YaHei', 'DejaVu Sans']
-plt.rcParams['axes.unicode_minus'] = False
+plt.rcParams['font.sans-serif'] = ['SimHei', 'Microsoft YaHei', 'DejaVu Sans']# 设置中文字体，SimHei是黑体，Microsoft YaHei是微软雅黑，DejaVu Sans是默认字体的备选
+plt.rcParams['axes.unicode_minus'] = False #    解决负号显示问题    
 
 print("===== Matplotlib 数据可视化 =====")
 print("图表会保存为图片文件，用看图软件打开\n")
@@ -17,7 +17,7 @@ days = ["周一", "周二", "周三", "周四", "周五", "周六", "周日"]
 hours = [2, 1.5, 3, 2.5, 1, 4, 5]
 
 plt.figure(figsize=(8, 5))
-plt.plot(days, hours, marker="o", linestyle="-", color="blue", linewidth=2, markersize=8)
+plt.plot(days, hours, marker="o", linestyle="-", color="blue", linewidth=2, markersize=8)# marker表示数据点的样式，linestyle表示线条的样式，color表示线条的颜色，linewidth表示线条的宽度，markersize表示数据点的大小
 
 plt.title("一周学习时间分布", fontsize=14)
 plt.xlabel("星期", fontsize=12)
