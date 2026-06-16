@@ -1,8 +1,6 @@
-# AI 机器学习学习计划
+# AI & ML Learning
 
 从零基础到独立完成 AI 项目，一步一个脚印。
-
----
 
 ## 学习路线图
 
@@ -38,33 +36,53 @@ Phase 5: 项目实战 ───────────────────�
   ├── 第20课：电影评论情感分析
   ├── 第21课：房价预测完整项目（含数据处理+特征工程）
   └── 第22课：自主完成个人AI项目
-
-Java期末复习 ──────────────────────────── 第J1-J7课
-  ├── J1：Java基础 —— 变量、类型、运算符、控制流程、数组
-  ├── J2：面向对象 —— 类、继承、多态、抽象类、接口
-  ├── J3：Java API —— String、包装类、Math、异常处理
-  ├── J4：集合与泛型 —— ArrayList、HashMap、Iterator、泛型
-  ├── J5：I/O流 —— 字节流、字符流、缓冲流、序列化
-  ├── J6：多线程与网络 —— Thread、synchronized、Socket
-  └── J7：反射机制 —— Class、Constructor、Method、Field
 ```
 
----
+## 项目结构
 
-## 每课结构
+```
+├── lessons/
+│   ├── python/           # Python课程（理论MD + 代码PY）
+│   │   ├── lesson_1_hello.py
+│   │   ├── lesson_5_numpy.py
+│   │   ├── lesson_9_linear_regression.py
+│   │   └── ...
+│   └── java/             # Java课程（理论MD + 代码Java）
+│       ├── lesson_1_java_basics.md
+│       ├── Lesson1_Basics.java
+│       └── ...
+├── JAVA/                 # Java期末复习（9章代码 + 练习题）
+│   ├── chapter1/         # 基础
+│   ├── chapter2/         # 面向对象
+│   ├── chapter3/         # API
+│   ├── chapter4/         # 集合
+│   ├── chapter5/         # IO
+│   ├── chapter6/         # 多线程
+│   ├── chapter7/         # 网络
+│   ├── chapter8/         # 数据库
+│   ├── chapter9/         # 反射
+│   └── exercises/        # 每章练习题
+├── tests/                # 课后作业
+└── data/                 # 数据文件
+    ├── images/           # 生成的图表
+    ├── students.csv
+    └── notes.txt
+```
 
-每一课包括：
-- **概念讲解**（MD 文件）：通俗易懂的理论 + 配图 + 生活类比
-- **代码实战**（PY 文件）：可运行的示例代码，每一行都有注释
-- **课后测验**：3-5 道题，检验理解程度
-- **编程作业**：动手写代码，巩固所学
+## 运行方式
 
-## 学习方法
+### Python
+```bash
+cd lessons/python
+python lesson_1_hello.py
+```
 
-- 先看 MD 文件理解概念，再运行 PY 文件看效果
-- 代码一定要**自己动手敲一遍**，不要直接复制
-- 每课测验独立完成后对答案
-- 遇到问题先自己思考，卡住 15 分钟再问
+### Java
+```bash
+cd JAVA
+javac -encoding UTF-8 chapter1/DataTypeDemo.java
+java chapter1.DataTypeDemo
+```
 
 ## 进度追踪
 
@@ -75,10 +93,8 @@ Java期末复习 ─────────────────────
 | Phase 3: 机器学习算法 | 进行中 |
 | Phase 4: 深度学习基础 | 未开始 |
 | Phase 5: 项目实战 | 未开始 |
-| Java期末复习 | 已完成 |
 
 ## 运行环境
 
-- Python 3.13+
-- NumPy, Pandas, Matplotlib, scikit-learn, PyTorch
-- Java 8+（javac编译，java运行）
+- Python 3.13+（NumPy, Pandas, Matplotlib, scikit-learn, PyTorch）
+- Java 8+（编译时加 `-encoding UTF-8`）
