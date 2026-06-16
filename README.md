@@ -38,6 +38,15 @@ Phase 5: 项目实战 ───────────────────�
   ├── 第20课：电影评论情感分析
   ├── 第21课：房价预测完整项目（含数据处理+特征工程）
   └── 第22课：自主完成个人AI项目
+
+Java期末复习 ──────────────────────────── 第J1-J7课
+  ├── J1：Java基础 —— 变量、类型、运算符、控制流程、数组
+  ├── J2：面向对象 —— 类、继承、多态、抽象类、接口
+  ├── J3：Java API —— String、包装类、Math、异常处理
+  ├── J4：集合与泛型 —— ArrayList、HashMap、Iterator、泛型
+  ├── J5：I/O流 —— 字节流、字符流、缓冲流、序列化
+  ├── J6：多线程与网络 —— Thread、synchronized、Socket
+  └── J7：反射机制 —— Class、Constructor、Method、Field
 ```
 
 ---
@@ -66,8 +75,10 @@ Phase 5: 项目实战 ───────────────────�
 | Phase 3: 机器学习算法 | 进行中 |
 | Phase 4: 深度学习基础 | 未开始 |
 | Phase 5: 项目实战 | 未开始 |
+| Java期末复习 | 已完成 |
 
 ## 运行环境
 
 - Python 3.13+
 - NumPy, Pandas, Matplotlib, scikit-learn, PyTorch
+- Java 8+（javac编译，java运行）

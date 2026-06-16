@@ -1,16 +1,28 @@
-# Python缓存
+# Python
 __pycache__/
 *.pyc
 *.pyo
+
+# Java编译产物
+*.class
+*.jar
+
+# NumPy数据文件（二进制）
+*.npy
+
+# 生成的图片（运行脚本可重新生成）
+*.png
 
 # 环境
 .env
 venv/
 .venv/
 
-# IDE
+# IDE / 编辑器
 .vscode/
 .idea/
+.vs/
 
-# NumPy数据文件（二进制）
-*.npy
+# 系统文件
+Thumbs.db
+.DS_Store

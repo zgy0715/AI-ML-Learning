@@ -5,6 +5,11 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
+import os
+
+# 图片输出目录（相对于脚本位置）
+IMG_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "data", "images")
+os.makedirs(IMG_DIR, exist_ok=True)
 
 plt.rcParams['font.sans-serif'] = ['SimHei', 'Microsoft YaHei', 'DejaVu Sans']
 plt.rcParams['axes.unicode_minus'] = False
@@ -34,9 +39,9 @@ plt.title("房屋面积 vs 价格（原始数据）", fontsize=14)
 plt.xlabel("面积（平米）")
 plt.ylabel("价格（万元）")
 plt.grid(True, alpha=0.3)
-plt.savefig("housing_data.png", dpi=100, bbox_inches="tight")
+plt.savefig(os.path.join(IMG_DIR, "housing_data.png"), dpi=100, bbox_inches="tight")
 plt.close()
-print("  数据散点图已保存: housing_data.png")
+print("  数据散点图已保存: data/images/housing_data.png")
 
 
 # ============================================================
@@ -242,9 +247,9 @@ axes[2].grid(True, alpha=0.3)
 
 plt.suptitle("线性回归训练过程", fontsize=15, fontweight="bold")
 plt.tight_layout()
-plt.savefig("linear_regression_result.png", dpi=120, bbox_inches="tight")
+plt.savefig(os.path.join(IMG_DIR, "linear_regression_result.png"), dpi=120, bbox_inches="tight")
 plt.close()
-print("  图表已保存: linear_regression_result.png")
+print("  图表已保存: data/images/linear_regression_result.png")
 
 
 # ============================================================

@@ -1,6 +1,11 @@
 # ========== 第7课：Matplotlib入门 ==========
 import matplotlib.pyplot as plt
 import numpy as np
+import os
+
+# 图片输出目录（相对于脚本位置）
+IMG_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "data", "images")
+os.makedirs(IMG_DIR, exist_ok=True)
 
 # 尝试设置中文字体
 plt.rcParams['font.sans-serif'] = ['SimHei', 'Microsoft YaHei', 'DejaVu Sans']# 设置中文字体，SimHei是黑体，Microsoft YaHei是微软雅黑，DejaVu Sans是默认字体的备选
@@ -24,9 +29,9 @@ plt.xlabel("星期", fontsize=12)
 plt.ylabel("学习时间(小时)", fontsize=12)
 plt.grid(True, alpha=0.3)
 
-plt.savefig("line_chart.png", dpi=100, bbox_inches="tight")
+plt.savefig(os.path.join(IMG_DIR, "line_chart.png"), dpi=100, bbox_inches="tight")
 plt.close()
-print("  折线图已保存: line_chart.png\n")
+print("  折线图已保存: data/images/line_chart.png\n")
 
 
 # ========== 2. 柱状图（对比大小）==========
@@ -47,9 +52,9 @@ plt.xlabel("科目", fontsize=12)
 plt.ylabel("分数", fontsize=12)
 plt.ylim(0, 100)
 
-plt.savefig("bar_chart.png", dpi=100, bbox_inches="tight")
+plt.savefig(os.path.join(IMG_DIR, "bar_chart.png"), dpi=100, bbox_inches="tight")
 plt.close()
-print("  柱状图已保存: bar_chart.png\n")
+print("  柱状图已保存: data/images/bar_chart.png\n")
 
 
 # ========== 3. 散点图（看相关性）==========
@@ -73,9 +78,9 @@ x_trend = np.linspace(1, 8, 100)
 plt.plot(x_trend, p(x_trend), "--", color="gray", alpha=0.7, label=f"趋势线 (y={z[0]:.1f}x+{z[1]:.0f})")
 plt.legend()
 
-plt.savefig("scatter_chart.png", dpi=100, bbox_inches="tight")
+plt.savefig(os.path.join(IMG_DIR, "scatter_chart.png"), dpi=100, bbox_inches="tight")
 plt.close()
-print("  散点图已保存: scatter_chart.png\n")
+print("  散点图已保存: data/images/scatter_chart.png\n")
 
 
 # ========== 4. 饼图（看占比）==========
@@ -90,9 +95,9 @@ plt.pie(sizes, labels=labels, colors=colors, autopct="%1.1f%%",
         startangle=90, shadow=True)
 
 plt.title("一天时间分配", fontsize=14)
-plt.savefig("pie_chart.png", dpi=100, bbox_inches="tight")
+plt.savefig(os.path.join(IMG_DIR, "pie_chart.png"), dpi=100, bbox_inches="tight")
 plt.close()
-print("  饼图已保存: pie_chart.png\n")
+print("  饼图已保存: data/images/pie_chart.png\n")
 
 
 # ========== 5. 实战：成绩分析报告 ==========
@@ -145,7 +150,7 @@ axes[1, 1].set_ylabel("总分")
 
 plt.suptitle("学生成绩分析报告", fontsize=16, fontweight="bold")
 plt.tight_layout()
-plt.savefig("score_analysis.png", dpi=120, bbox_inches="tight")
+plt.savefig(os.path.join(IMG_DIR, "score_analysis.png"), dpi=120, bbox_inches="tight")
 plt.close()
-print("  成绩分析报告已保存: score_analysis.png")
+print("  成绩分析报告已保存: data/images/score_analysis.png")
 print("\n所有图表已生成完毕！去文件夹查看图片吧")

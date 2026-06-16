@@ -6,6 +6,11 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from collections import Counter
+import os
+
+# 图片输出目录（相对于脚本位置）
+IMG_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "data", "images")
+os.makedirs(IMG_DIR, exist_ok=True)
 
 plt.rcParams['font.sans-serif'] = ['SimHei', 'Microsoft YaHei', 'DejaVu Sans']
 plt.rcParams['axes.unicode_minus'] = False
@@ -64,9 +69,9 @@ plt.xlabel("特征1")
 plt.ylabel("特征2")
 plt.legend()
 plt.grid(True, alpha=0.3)
-plt.savefig("knn_data.png", dpi=100, bbox_inches="tight")
+plt.savefig(os.path.join(IMG_DIR, "knn_data.png"), dpi=100, bbox_inches="tight")
 plt.close()
-print("  数据图已保存: knn_data.png")
+print("  数据图已保存: data/images/knn_data.png")
 
 
 # ============================================================
@@ -166,9 +171,9 @@ def plot_knn_decision(X_train, y_train, x_new, k=3):
     plt.legend()
     plt.grid(True, alpha=0.3)
     plt.axis("equal")
-    plt.savefig(f"knn_k{k}_decision.png", dpi=100, bbox_inches="tight")
+    plt.savefig(os.path.join(IMG_DIR, f"knn_k{k}_decision.png"), dpi=100, bbox_inches="tight")
     plt.close()
-    print(f"  K={k} 决策图已保存: knn_k{k}_decision.png")
+    print(f"  K={k} 决策图已保存: data/images/knn_k{k}_decision.png")
 
 
 plot_knn_decision(X_train, y_train, test_point, k=3)
@@ -240,9 +245,9 @@ plt.xlabel("特征1")
 plt.ylabel("特征2")
 plt.legend()
 plt.grid(True, alpha=0.3)
-plt.savefig("knn_decision_boundary.png", dpi=100, bbox_inches="tight")
+plt.savefig(os.path.join(IMG_DIR, "knn_decision_boundary.png"), dpi=100, bbox_inches="tight")
 plt.close()
-print("  决策边界图已保存: knn_decision_boundary.png")
+print("  决策边界图已保存: data/images/knn_decision_boundary.png")
 print("  红色区域 = 模型认为属于A类")
 print("  蓝色区域 = 模型认为属于B类")
 print("  中间分界线就是决策边界\n")

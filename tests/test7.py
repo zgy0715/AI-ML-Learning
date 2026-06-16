@@ -1,4 +1,9 @@
 import matplotlib.pyplot as plt
+import os
+
+# 图片输出目录（相对于脚本位置）
+IMG_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data", "images")
+os.makedirs(IMG_DIR, exist_ok=True)
 
 # 设置中文字体（和lesson_7一样）
 plt.rcParams['font.sans-serif'] = ['SimHei', 'Microsoft YaHei', 'DejaVu Sans']
@@ -11,7 +16,7 @@ aqi = [85, 72, 68, 55, 90]  # 空气质量指数
 
 #AQI > 80 的柱子标红色，其余标绿色
 
-#保存为 aqi_chart.png
+#保存为 data/images/aqi_chart.png
 plt.figure(figsize=(8, 5))
 colors = ["red" if value > 80 else "green" for value in aqi]
 bars = plt.bar(cities, aqi, color=colors)
@@ -28,7 +33,7 @@ plt.ylabel("AQI", fontsize=12)
 plt.ylim(0, max(aqi) + 10)
 
 # 保存
-plt.savefig("aqi_chart.png", dpi=100, bbox_inches="tight")
+plt.savefig(os.path.join(IMG_DIR, "aqi_chart.png"), dpi=100, bbox_inches="tight")
 plt.close()
 
-print("图表已生成！打开 aqi_chart.png 看看效果")
+print("图表已生成！打开 data/images/aqi_chart.png 看看效果")

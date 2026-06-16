@@ -1,6 +1,10 @@
 # ========== 第6课：Pandas入门 ==========
 import pandas as pd# 数据分析的核心库，提供了强大的数据结构和数据处理功能
 import numpy as np# 数值计算库，提供了高效的数组操作和数学函数
+import os
+
+# 数据目录（相对于脚本位置）
+DATA_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "data")
 
 # ========== 1. 创建DataFrame（类似Excel表格）==========
 print("===== 创建DataFrame =====")# 从列表创建
@@ -97,11 +101,12 @@ print(df.groupby("城市")["姓名"].count())
 print("\n===== 读写CSV =====")
 
 # 保存到CSV
-df.to_csv("students.csv", index=False, encoding="utf-8-sig")
-print("已保存到 students.csv")
+csv_path = os.path.join(DATA_DIR, "students.csv")
+df.to_csv(csv_path, index=False, encoding="utf-8-sig")
+print("已保存到 data/students.csv")
 
 # 读取CSV
-df_read = pd.read_csv("students.csv", encoding="utf-8-sig")
+df_read = pd.read_csv(csv_path, encoding="utf-8-sig")
 print("读取成功:\n", df_read)
 
 
